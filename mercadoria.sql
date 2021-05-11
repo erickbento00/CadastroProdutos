@@ -15,7 +15,3 @@ SELECT * FROM produto;
 
 SELECT * FROM produto
 WHERE descricao_prod LIKE '%ão%';
-
-
-DELETE FROM produto
-WHERE cod_prod = 8;

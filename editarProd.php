@@ -36,7 +36,7 @@ if($operador == 'buscar'){
 
     $conn->close();
     die("Editado com sucesso!");
-}elseif('excluir'){
+}elseif($operador =='excluir'){
     $conn->query("DELETE FROM produto WHERE cod_prod = $codigo");
     
     $conn->close();

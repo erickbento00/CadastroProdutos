@@ -84,9 +84,9 @@ function listaProdutos(){
         if (document.getElementById("demo")){
             meuObj = JSON.parse(data);
             txt += "<table>";
-            txt += "<tr><th>" + "Código" + "</th>" + "<th>" + "Descrição" + "</th>"
-            + "<th>" + "Categoria" + "</th>" + "<th>" + "R$ Valor" + "</th>"
-            + "<th>" + "Estoque" + "</th>" + "<th>" + "Observão" + "</th></tr>";
+            txt += "<tr><th>" + " Código " + "</th>" + "<th>" + " Descrição " + "</th>"
+            + "<th>" + " Categoria " + "</th>" + "<th>" + " R$ Valor " + "</th>"
+            + "<th>" + " Estoque " + "</th>" + "<th>" + "Observação" + "</th>" + "<th>" + " " + "</th>" + "<th>" + " " + "</th></tr>";
             for (x in meuObj) {
             txt += "<tr><td>" + meuObj[x].cod_prod + "</td>"
             + "<td>" + meuObj[x].descricao_prod + "</td>"
@@ -94,8 +94,8 @@ function listaProdutos(){
             + "<td>" + meuObj[x].valor_uni + "</td>"
             + "<td>" + meuObj[x].quant_prod + "</td>"
             + "<td>" + meuObj[x].obs_prod + "</td>"
-            + "<td><a href='editarCadastro.html?codigo=" + meuObj[x].cod_prod + "'>" + "Editar" + "</a></td>"
-            + "<td><input type='button' onclick='apagarProduto(" + meuObj[x].cod_prod + ");' value='Excluir'></input></td></tr>";
+            + "<td><a href='editarCadastro.html?codigo=" + meuObj[x].cod_prod + "'><input type='button' class='editar' value='Editar'>" + "</input></a></td>"
+            + "<td><input type='button' onclick='apagarProduto(" + meuObj[x].cod_prod + ");' class='excluir' value='Excluir'></input></td></tr>";
             };
             txt += "</table>"
             document.getElementById("demo").innerHTML = txt;
@@ -108,10 +108,10 @@ function GetURLParameter(sParam)
 {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
+    for (var i = 0; i < sURLVariables.length; i++)
     {
         var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
+        if (sParameterName[0] == sParam)
         {
             return sParameterName[1];
         }

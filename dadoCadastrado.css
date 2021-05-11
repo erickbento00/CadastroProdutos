@@ -1,0 +1,162 @@
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  text-align: center;
+  background-color: rgba(212, 220, 221, 0.74);;
+}
+
+.formar {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.link {
+  width: 70%;
+  margin: 0 auto;
+}
+
+input[type=text] {
+  width: 70%;
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: 3px solid rgba(248, 252, 252, 0.74);
+  background-color: rgba(248, 252, 252, 0.74);
+}
+
+select {
+  padding: 5px 10px;
+  position: relative;
+  background-color:rgba(248, 252, 252, 0.74);
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 900;
+  font-size:medium;
+}
+
+body {
+  background-color: rgba(212, 220, 221, 0.74);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rodape{
+  padding: 8px;
+  color:white;
+  text-align: center;
+  background-color: rgb(196, 196, 196);
+  overflow: hidden;
+}
+
+.cabecalho { 
+  overflow: hidden;
+  background-color: rgb(196, 196, 196);
+  top: 0;
+}
+
+.cabecalho h3 {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 3px 20px;
+  text-decoration: none;
+}
+
+.cabecalho a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1px 20px;
+  text-decoration: none;
+}
+
+.cabecalho h3.logo{
+  float: left;
+  text-align: center;
+  background-color:slategray;
+  color: white;
+}
+
+
+.botaoPesquisa{
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  letter-spacing: 2px;
+}
+
+.botaoFiltroCategoria {
+  background-color: silver;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.adicionar {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.editar {
+  background-color: silver;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.excluir {
+  background-color: red; 
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 20px;
+}
