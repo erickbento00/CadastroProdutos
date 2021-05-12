@@ -15,3 +15,5 @@ SELECT * FROM produto;
 
 SELECT * FROM produto
 WHERE descricao_prod LIKE '%ão%';
+
+

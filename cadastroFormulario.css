@@ -106,6 +106,9 @@ textarea {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    width: 97%;
+    position: absolute;
+    bottom: 0;
     padding: 8px;
     color:white;
     background-color: rgb(196, 196, 196);
