@@ -5,7 +5,6 @@ $(document).ready(function(){
     }
 });
 
-
 function carregaProduto(){
     $.post("editarProd.php",
     {

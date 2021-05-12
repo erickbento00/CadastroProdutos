@@ -15,6 +15,10 @@ if($pesquisa){
     $search = " AND descricao_prod LIKE '%$pesquisa%'";
 };
 
+if($filtroCategoria && $pesquisa) {
+    $search = " AND descricao_prod LIKE '%$pesquisa%' AND tipo_prod LIKE '$filtroCategoria'";
+};
+
 // Criando a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -14,6 +14,5 @@ CREATE TABLE produto (
 SELECT * FROM produto;
 
 SELECT * FROM produto
-WHERE descricao_prod LIKE '%ão%';
-
+WHERE descricao_prod LIKE '%ão%' AND tipo_prod LIKE 'Fruta';
 
