@@ -1,7 +1,8 @@
 .cabecalho {
+  display: flex;
+  justify-content: flex-start;
   overflow: hidden;
   background-color: rgb(196, 196, 196);
-  top: 0;
   padding: 20px 20px;
 }
 
@@ -109,8 +110,6 @@ th {
   background-color: rgba(212, 220, 221, 0.74);;
 }
 
-
-
 .link {
   width: 70%;
   margin: 0 auto;
@@ -155,15 +154,11 @@ th {
   cursor: pointer;
 }
 
-
-
-.rodape{
-  position: absolute;
-  bottom: 0;
-  width: 98%;
+.rodape {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   padding: 8px;
   color:white;
-  text-align: center;
   background-color: rgb(196, 196, 196);
-  overflow: hidden;
 }
