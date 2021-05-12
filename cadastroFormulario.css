@@ -48,15 +48,28 @@ label {
 
 input{
     background-color: rgba(248, 252, 252, 0.74);
+    display: inline-block;
+    text-decoration: none;
     border: none;
     color: black;
-    padding: 10px 30px;
-    text-decoration: none;
-    display: inline-block;
     font-size: 15px;
+    padding: 10px 30px;
     border-radius: 20px;
     letter-spacing: 1px;
 }
+
+select {
+    background-color: rgba(248, 252, 252, 0.74);
+    border: none;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    width: 250px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
 
 textarea {
     background-color: rgba(248, 252, 252, 0.74);

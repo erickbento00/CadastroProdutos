@@ -8,7 +8,7 @@ $filtroCategoria = isset($_POST['filtroCategoria']) ? htmlspecialchars($_POST['f
 $pesquisa = isset($_POST['pesquisa']) ? htmlspecialchars($_POST['pesquisa']) : '';
 $search = "";
 if($filtroCategoria){
-    $search = " AND tipo_prod LIKE '$filtroCategoria'";
+    $search = " AND cod_categoria LIKE '$filtroCategoria'";
 };
 
 if($pesquisa){
@@ -16,7 +16,7 @@ if($pesquisa){
 };
 
 if($filtroCategoria && $pesquisa) {
-    $search = " AND descricao_prod LIKE '%$pesquisa%' AND tipo_prod LIKE '$filtroCategoria'";
+    $search = " AND descricao_prod LIKE '%$pesquisa%' AND cod_categoria LIKE '$filtroCategoria'";
 };
 
 // Criando a conexão

@@ -5,6 +5,13 @@ $(document).ready(function(){
     }
 });
 
+$(document).ready(function(){
+    selectProdutos();
+    if(GetURLParameter('codigo')){
+        carregaProduto(GetURLParameter('codigo'));
+    }
+});
+
 function carregaProduto(){
     $.post("editarProd.php",
     {
@@ -14,7 +21,7 @@ function carregaProduto(){
     function(data){
         meuObj = JSON.parse(data);
         $('#descricao').val(meuObj[0].descricao_prod),
-        $('#categoria').val(meuObj[0].tipo_prod),
+        $('#cod_categoria').val(meuObj[0].cod_categoria),
         $('#preco').val(meuObj[0].valor_uni),
         $('#quantidade').val(meuObj[0].quant_prod),
         $('#observacao').val(meuObj[0].obs_prod);
@@ -46,7 +53,7 @@ $(".edita").click(function(){
         operador: 'atualizar',
         codigo: GetURLParameter('codigo'),
         descricao: $('#descricao').val(),
-        categoria: $('#categoria').val(),
+        cod_categoria: $('#cod_categoria').val(),
         preco: $('#preco').val(),
         quantidade: $('#quantidade').val(),
         observacao: $('#observacao').val(),
@@ -61,7 +68,7 @@ $(".botao").click(function(){
     $.post("cadastroProd.php",
     {
         descricao: $('#descricao').val(),
-        categoria: $('#categoria').val(),
+        cod_categoria: $('#cod_categoria').val(),
         preco: $('#preco').val(),
         quantidade: $('#quantidade').val(),
         observacao: $('#observacao').val(),
@@ -89,7 +96,7 @@ function listaProdutos(){
             for (x in meuObj) {
             txt += "<tr><td>" + meuObj[x].cod_prod + "</td>"
             + "<td>" + meuObj[x].descricao_prod + "</td>"
-            + "<td>" + meuObj[x].tipo_prod + "</td>"
+            + "<td>" + meuObj[x].cod_categoria + "</td>"
             + "<td>" + meuObj[x].valor_uni + "</td>"
             + "<td>" + meuObj[x].quant_prod + "</td>"
             + "<td>" + meuObj[x].obs_prod + "</td>"
@@ -98,6 +105,27 @@ function listaProdutos(){
             };
             txt += "</table>"
             document.getElementById("demo").innerHTML = txt;
+            }
+        },
+    );
+};
+
+function selectProdutos(){
+    txt = "";
+    $.post("selectCategoria.php",
+    {
+        nome_categoria: $('#nome_categoria').val(),
+    },
+    function(data){
+        if (document.getElementById("select_categoria")){
+            meuObj = JSON.parse(data);
+            txt += "<select>";
+            txt += "<option value=''>" + "" + "</option>"
+            for (x in meuObj) {
+            txt += "<option value='"+ meuObj[x].nome_categoria +"'>" + meuObj[x].nome_categoria + "</option>"
+            };
+            txt += "</select>"
+            document.getElementById("select_categoria").innerHTML = txt;
             }
         },
     );
