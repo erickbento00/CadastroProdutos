@@ -1,10 +1,33 @@
-form {
-    left: 50%;
-    top: 50%;
-    margin-left: -12%;
-    margin-top: -25%;
-    position: absolute;
-    background-color: rgba(212, 220, 221);
+.cabecalho {
+    overflow: hidden;
+    background-color: rgb(196, 196, 196);
+    top: 0;
+    padding: 20px 20px;
+  }
+
+.cabecalho h3 {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 3px 20px;
+    text-decoration: none;
+}
+
+.cabecalho a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 30px;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.cabecalho img{
+    float: left;
+    text-align: center;
 }
 
 body {
@@ -12,10 +35,23 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+form {
+    left: 50%;
+    top: 50%;
+    margin-left: -12%;
+    margin-top: -10%;
+    position: absolute;
+    background-color: rgba(212, 220, 221);
+}
+
+label {
+    font-weight: 700;
+}
+
 input {
-    background-color: silver;
+    background-color: rgba(248, 252, 252, 0.74);
     border: none;
-    color: white;
+    color: black;
     padding: 10px 30px;
     text-decoration: none;
     display: inline-block;
@@ -25,9 +61,9 @@ input {
 }
 
 textarea {
-    background-color: silver;
+    background-color: rgba(248, 252, 252, 0.74);
     border: none;
-    color: white;
+    color: black;
     padding: 12px 30px;
     text-decoration: none;
     display: inline-block;
@@ -36,10 +72,45 @@ textarea {
     letter-spacing: 1px;
 }
 
-label {
-    font-weight: 700;
+.cancelar {
+    background-color: red;
+    color:white;
+    cursor: pointer;
 }
 
-.cancelar {
-    color: tomato;
+.botao {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.edita {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.rodape {
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    padding: 8px;
+    color:white;
+    text-align: center;
+    background-color: rgb(196, 196, 196);
+    overflow: hidden;
 }
