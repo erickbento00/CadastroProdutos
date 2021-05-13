@@ -92,11 +92,12 @@ function listaProdutos(){
             txt += "<table>";
             txt += "<tr><th>" + " Código " + "</th>" + "<th>" + " Descrição " + "</th>"
             + "<th>" + " Categoria " + "</th>" + "<th>" + " R$ Valor " + "</th>"
-            + "<th>" + " Estoque " + "</th>" + "<th>" + "Observação" + "</th>" + "<th>" + " " + "</th>" + "<th>" + " " + "</th></tr>";
+            + "<th>" + " Estoque " + "</th>" + "<th>" + "Observação" + "</th>" 
+            + "<th>" + " " + "</th>" + "<th>" + " " + "</th></tr>";
             for (x in meuObj) {
             txt += "<tr><td>" + meuObj[x].cod_prod + "</td>"
             + "<td>" + meuObj[x].descricao_prod + "</td>"
-            + "<td>" + meuObj[x].cod_categoria + "</td>"
+            + "<td>" + meuObj[x].nome_categoria + "</td>"
             + "<td>" + meuObj[x].valor_uni + "</td>"
             + "<td>" + meuObj[x].quant_prod + "</td>"
             + "<td>" + meuObj[x].obs_prod + "</td>"

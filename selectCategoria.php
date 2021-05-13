@@ -5,6 +5,7 @@ $password = "";
 $dbname="mercadoria";
 
 $selectCategoria = isset($_POST['nome_categoria']) ? htmlspecialchars($_POST['nome_categoria']) : '';
+$categoria = isset($_POST['categoria']) ? htmlspecialchars($_POST['categoria']) : '';
 $search = "";
 if($selectCategoria){
     $search = " AND nome_categoria LIKE '$selectCategoria'";
