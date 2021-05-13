@@ -21,7 +21,7 @@ function carregaProduto(){
     function(data){
         meuObj = JSON.parse(data);
         $('#descricao').val(meuObj[0].descricao_prod),
-        $('#cod_categoria').val(meuObj[0].cod_categoria),
+        $('#categoria').val(meuObj[0].cod_categoria),
         $('#preco').val(meuObj[0].valor_uni),
         $('#quantidade').val(meuObj[0].quant_prod),
         $('#observacao').val(meuObj[0].obs_prod);
@@ -53,7 +53,7 @@ $(".edita").click(function(){
         operador: 'atualizar',
         codigo: GetURLParameter('codigo'),
         descricao: $('#descricao').val(),
-        cod_categoria: $('#cod_categoria').val(),
+        categoria: $('#categoria').val(),
         preco: $('#preco').val(),
         quantidade: $('#quantidade').val(),
         observacao: $('#observacao').val(),
@@ -68,7 +68,7 @@ $(".botao").click(function(){
     $.post("cadastroProd.php",
     {
         descricao: $('#descricao').val(),
-        cod_categoria: $('#cod_categoria').val(),
+        categoria: $('#categoria').val(),
         preco: $('#preco').val(),
         quantidade: $('#quantidade').val(),
         observacao: $('#observacao').val(),
@@ -83,7 +83,7 @@ function listaProdutos(){
     txt = "";
     $.post("filtroProd.php",
     {
-        filtroCategoria: $('#FiltroCategoria').val(),
+        filtroCategoria: $('#categoria').val(),
         pesquisa: $('#pesquisa').val(),
     },
     function(data){
@@ -115,17 +115,18 @@ function selectProdutos(){
     $.post("selectCategoria.php",
     {
         nome_categoria: $('#nome_categoria').val(),
+        categoria: $('#categoria').val(),
     },
     function(data){
-        if (document.getElementById("select_categoria")){
+        if (document.getElementById("categoria")){
             meuObj = JSON.parse(data);
             txt += "<select>";
             txt += "<option value=''>" + "" + "</option>"
             for (x in meuObj) {
-            txt += "<option value='"+ meuObj[x].nome_categoria +"'>" + meuObj[x].nome_categoria + "</option>"
+            txt += "<option value='"+ meuObj[x].cod_categoria +"'>" + meuObj[x].nome_categoria + "</option>"
             };
             txt += "</select>"
-            document.getElementById("select_categoria").innerHTML = txt;
+            document.getElementById("categoria").innerHTML = txt;
             }
         },
     );
