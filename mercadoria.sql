@@ -52,6 +52,7 @@ SELECT p.cod_prod,
   FROM produto p
   LEFT JOIN categoria c
   ON p.cod_categoria = c.cod_categoria
+  WHERE p.cod_categoria = 1
   
 SELECT produto.cod_categoria, categoria.nome_categoria
 FROM produto
