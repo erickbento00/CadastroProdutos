@@ -2,8 +2,6 @@
 require("libs/fpdf/fpdf.php");
 include("conexao.php");
 
-// busca os dados no banco de dados
-
 $codigo = isset($_POST['codigo']) ? htmlspecialchars($_POST['codigo']) : '';
 $descricao = isset($_POST['descricao']) ? htmlspecialchars($_POST['descricao']) : '';
 $categoria = isset($_POST['categoria']) ? htmlspecialchars($_POST['categoria']) : '';
@@ -22,44 +20,45 @@ if ($retorno) {
     $retorno = $meuArr;
 };
 
+class PDF extends FPDF {
+    // Load data
+    function LoadData($file) {
+        // Read file lines
+        $lines = file($file);
+        $retorno = array();
+        foreach($lines as $line)
+            $retorno[] = explode('=>',trim($line));
+        return $retorno;
+    }
 
-
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(40, 5, 'Código');
-$pdf->SetX(35);
-$pdf->Cell(40, 5, 'Categoria');
-$pdf->SetX(63);
-$pdf->Cell(40, 5, 'Nome');
-$pdf->SetX(83);
-$pdf->Cell(40, 5, 'Valor Unitário');
-$pdf->SetX(115);
-$pdf->Cell(40, 5, 'Quantidade');
-$pdf->SetX(150);
-$pdf->Cell(100, 5, 'Observação');
-$pdf->SetX(15);
-
-
-$x = 20;
-$z = 30;
-$y = 20;
-foreach ($retorno as $key => $produto) {
-    $pdf->Cell($x+10, $y, $produto["cod_prod"]);
-    $pdf->SetX(35);
-    $pdf->Cell($x+10, $y, $produto["nome_categoria"]);
-    $pdf->SetX(62);
-    $pdf->Cell($x+10, $y, $produto["descricao_prod"]);
-    $pdf->SetX(90);
-    $pdf->Cell($x+10, $y, $produto["valor_uni"]);
-    $pdf->SetX(120);
-    $pdf->Cell($x+10, $y, $produto["quant_prod"]);
-    $pdf->SetX(145);
-    $pdf->Cell($x+10, $y, $produto["obs_prod"]);
-    $pdf->SetX(15);
-    $y += 30;
+// Better table
+    function ImprovedTable($header, $retorno)
+    {
+        // Column widths
+        $w = array(18, 30, 30, 20, 20, 60);
+        // Header
+        for($i=0;$i<count($header);$i++) {
+            $this->Cell($w[$i], 9, $header[$i], 1, 0, 'C');
+        }  
+        $this->Ln();
+        // Data
+        foreach ($retorno as $key => $produto) {
+            $this->Cell($w[0], 6, number_format($produto["cod_prod"]), 'LR', 0, 'R');
+            $this->Cell($w[1], 6, $produto["nome_categoria"],'LR');
+            $this->Cell($w[2], 6, $produto["descricao_prod"],'LR' );
+            $this->Cell($w[3], 6, number_format($produto["valor_uni"]),'LR', 0, 'R');
+            $this->Cell($w[4], 6, number_format($produto["quant_prod"]),'LR', 0, 'R');
+            $this->Cell($w[5], 6, $produto["obs_prod"], 'LR');
+            $this->Ln();
+        }
+        $this->Cell(array_sum($w),0,'','T');
+    }
 }
 
+$pdf = new PDF();
+$header = array('Código', 'Descrição', 'Categoria', 'R$ Valor', 'Estoque', 'Observação');
+$pdf->SetFont('Arial','',14);
+$pdf->AddPage();
+$pdf->ImprovedTable($header,$retorno);
 $pdf->Output();
-
 ?>
