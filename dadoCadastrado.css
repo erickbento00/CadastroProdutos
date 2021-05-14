@@ -156,6 +156,20 @@ th {
   cursor: pointer;
 }
 
+.imprimir {
+  background-color: silver;
+  color: black;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 12px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+}
+
+
 .rodape {
   display: flex;
   align-items: flex-end;
