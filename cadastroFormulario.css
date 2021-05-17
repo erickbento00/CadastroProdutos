@@ -40,6 +40,7 @@ div {
     display: flex;
     flex-direction: column;
     align-items:center;
+    justify-content: center;
 }
 
 label {
@@ -53,7 +54,7 @@ input{
     border: none;
     color: black;
     font-size: 15px;
-    padding: 10px 30px;
+    padding: 10px 38px;
     border-radius: 20px;
     letter-spacing: 1px;
 }
@@ -87,6 +88,7 @@ textarea {
     background-color: red;
     color:white;
     cursor: pointer;
+    padding: 10px 30px;
 }
 
 .botao {
@@ -119,7 +121,7 @@ textarea {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: 97%;
+    width: 98%;
     position: absolute;
     bottom: 0;
     padding: 8px;
